@@ -1,0 +1,11 @@
+<% layout('layout') %>
+
+<form method="POST" action="/book" class="needs-validation" novalidate>
+<input name="title" required class="form-control mb-2" placeholder="Title">
+<input name="author" required class="form-control mb-2" placeholder="Author">
+<input name="genre" class="form-control mb-2" placeholder="Genre">
+<input type="date" name="publishedDate" class="form-control mb-2" placeholder="Published Date">
+<input type="number" name="rating" min="1" max="5" required class="form-control mb-2" placeholder="Rating">
+<textarea name="review" class="form-control mb-2" placeholder="Review"></textarea>
+<button>Add</button>
+</form>
