@@ -1,12 +1,12 @@
 <% layout('layout') %>
 
-<form method="POST" action="/books/<%= book._id %>?_method=PUT">
+<form method="POST" action="/reviews/<%= review._id %>?_method=PUT">
 <input value="<%= book.title %>" disabled class="form-control mb-2">
-<input name="author" value="<%= book.author %>" class="form-control mb-2">
-<input name="genre" value="<%= book.genre %>" class="form-control mb-2">
-<input type="number" name="rating" min="1" max="5" value="<%= book.rating %>" class="form-control mb-2">
-<textarea name="review" class="form-control mb-2" placeholder="Review"><%= book.review %></textarea>
-<textarea name="reviewDate" class="form-control mb-2" placeholder="Review Date"><%= book.reviewDate.toISOString().split('T')[0] %></textarea>   
+<input name="author" value="<%= review.author %>" class="form-control mb-2">
+<input name="genre" value="<%= review.genre %>" class="form-control mb-2">
+<input type="number" name="rating" min="1" max="5" value="<%= review.rating %>" class="form-control mb-2">
+<textarea name="review" class="form-control mb-2" placeholder="Review"><%= review.review %></textarea>
+<textarea name="reviewDate" class="form-control mb-2" placeholder="Review Date"><%= review.reviewDate.toISOString().split('T')[0] %></textarea>   
 
 <button>Update</button>
 </form>
