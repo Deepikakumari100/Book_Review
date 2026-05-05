@@ -1,38 +1,37 @@
 <% layout('layout') %>
 
-<a href="/book/new" class="btn btn-primary mb-3">Add Book</a>
+<a href="/review/new" class="btn btn-primary mb-3">Add Review</a>
 
 <table class="table table-bordered">
 <thead>
 <tr>
-<th>Title</th>
-<th>Author</th>
-<th>Genre</th>
-<th>Rating</th>
-<th>Review Date</th>
-<th>Review</th>
-<th>Actions</th>
+  <th>Title</th>
+  <th>Author</th>
+  <th>Genre</th>
+  <th>Rating</th>
+  <th>Review Date</th>
+  <th>Review</th>
+  <th>Actions</th>
 </tr>
 </thead>
 
 <tbody>
-<% books.forEach(b=>{ %>
+<% reviews.forEach(r => { %>
 <tr>
-<td><%= b.title %></td>
-<td><%= b.author %></td>
-<td><%= b.genre %></td>
-<td><%= b.rating %></td>
-<td><%= b.reviewDate.toISOString().split('T')[0] %></td>
-<td><%= b.review %></td>
-<td>
-<a href="/books/<%= b._id %>" class="btn btn-info btn-sm">View</a>
-<a href="/books/<%= b._id %>/edit" class="btn btn-warning btn-sm">Edit</a>
+  <td><%= r.title %></td>
+  <td><%= r.author %></td>
+  <td><%= r.genre %></td>
+  <td><%= r.rating %></td>
+  <td><%= r.reviewDate.toISOString().split('T')[0] %></td>
+  <td><%= r.review %></td>
+  <td>
+    <a href="/reviews/<%= r._id %>" class="btn btn-info btn-sm">View</a>
+    <a href="/reviews/<%= r._id %>/edit" class="btn btn-warning btn-sm">Edit</a>
 
-<form method="POST" action="/books/<%= b._id %>?_method=DELETE" style="display:inline">
-<button class="btn btn-danger btn-sm">Delete</button>
-</form>
-</td>
-
+    <form method="POST" action="/reviews/<%= r._id %>?_method=DELETE" style="display:inline">
+      <button class="btn btn-danger btn-sm">Delete</button>
+    </form>
+  </td>
 </tr>
 <% }) %>
 </tbody>
